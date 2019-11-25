@@ -10,7 +10,7 @@ class EmailAddressParser
     @csv_emails=csv_emails
   end
   
-  def parse 
+  def parse(csv_emails)
     csv_emails.split(",").uniq 
   end 
 end
