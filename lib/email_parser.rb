@@ -6,5 +6,6 @@
 class EmailAddressParser
   attr_accessor :email 
   
-  def parse
+  def parse(emails)
+    emails.split(", ")
 end
