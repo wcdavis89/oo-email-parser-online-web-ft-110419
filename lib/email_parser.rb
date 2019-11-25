@@ -6,14 +6,19 @@
 class EmailParser
   attr_accessor :email 
   
-    @@all_emails =[]
-  
-  def self.all
-    @@all_emails
-  end
-  
-  def initialize(email)
-    @email = email
-    @@all_emails << self
-  end
+  def self.parse(csv_data)
+    rows=csv_data.split("\n")
+    people=rows.collect do |row|
+       data=row.split(", ")
+       name=data[0]
+       age=data[1]
+       company=data[2]
+       person=self.new
+       person.name=name
+       person.age=age
+       person.company=company
+        person
+      end
+     people
+   end
 end
